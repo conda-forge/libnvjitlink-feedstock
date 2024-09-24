@@ -59,7 +59,7 @@ outputs:
         # xref: conda-forge/libnvjitlink-feedstock#15
         # we want to allow ex: libnvjitlink=12.6 installed in a cuda-version=12.3 environment,
         # both within the same CUDA major.
-        - {{ pin_compatible('cuda-version', min_pin='x', max_pin='x') }}
+        - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x.x") }}
       run_constrained:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
     # Tests are defined at the top level, due to package/output name conflicts.
