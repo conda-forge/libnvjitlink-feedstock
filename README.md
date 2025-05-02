@@ -1,7 +1,21 @@
-About libnvjitlink-feedstock
-============================
+About libnvjitlink-split-feedstock
+==================================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libnvjitlink-feedstock/blob/main/LICENSE.txt)
+
+
+About libnvjitlink-split
+------------------------
+
+Home: https://developer.nvidia.com/cuda-toolkit
+
+Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
+
+Summary: CUDA nvJitLink library
+
+Documentation: https://docs.nvidia.com/cuda/nvjitlink/index.html
+
+nvJitLink - Just-in-Time Link Time Optimization (JIT LTO)
 
 
 About libnvjitlink
@@ -14,34 +28,6 @@ Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvi
 Summary: CUDA nvJitLink library
 
 Documentation: https://docs.nvidia.com/cuda/nvjitlink/
-
-nvJitLink - Just-in-Time Link Time Optimization (JIT LTO)
-
-
-About libnvjitlink-static
--------------------------
-
-Home: https://developer.nvidia.com/cuda-toolkit
-
-Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
-
-Summary: CUDA nvJitLink library
-
-Documentation: https://docs.nvidia.com/cuda/nvjitlink/index.html
-
-nvJitLink - Just-in-Time Link Time Optimization (JIT LTO)
-
-
-About libnvjitlink-dev
-----------------------
-
-Home: https://developer.nvidia.com/cuda-toolkit
-
-Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
-
-Summary: CUDA nvJitLink library
-
-Documentation: https://docs.nvidia.com/cuda/nvjitlink/index.html
 
 nvJitLink - Just-in-Time Link Time Optimization (JIT LTO)
 
@@ -101,10 +87,10 @@ Current release info
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libnvjitlink--dev-green.svg)](https://anaconda.org/conda-forge/libnvjitlink-dev) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libnvjitlink-dev.svg)](https://anaconda.org/conda-forge/libnvjitlink-dev) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libnvjitlink-dev.svg)](https://anaconda.org/conda-forge/libnvjitlink-dev) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libnvjitlink-dev.svg)](https://anaconda.org/conda-forge/libnvjitlink-dev) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libnvjitlink--static-green.svg)](https://anaconda.org/conda-forge/libnvjitlink-static) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libnvjitlink-static.svg)](https://anaconda.org/conda-forge/libnvjitlink-static) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libnvjitlink-static.svg)](https://anaconda.org/conda-forge/libnvjitlink-static) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libnvjitlink-static.svg)](https://anaconda.org/conda-forge/libnvjitlink-static) |
 
-Installing libnvjitlink
-=======================
+Installing libnvjitlink-split
+=============================
 
-Installing `libnvjitlink` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libnvjitlink-split` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
@@ -190,17 +176,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating libnvjitlink-feedstock
-===============================
+Updating libnvjitlink-split-feedstock
+=====================================
 
-If you would like to improve the libnvjitlink recipe or build a new
+If you would like to improve the libnvjitlink-split recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/libnvjitlink-feedstock are
+Note that all branches in the conda-forge/libnvjitlink-split-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
