@@ -4,11 +4,13 @@
 {% set platform = "placeholder" %}  # [osx]
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-ppc64le" %}  # [ppc64le]
-{% set platform = "linux-sbsa" %}  # [aarch64]
+{% set platform = "linux-sbsa" %}  # [aarch64 and arm_variant_type=="sbsa"]
+{% set platform = "linux-aarch64" %}  # [aarch64 and arm_variant_type=="tegra"]
 {% set platform = "windows-x86_64" %}  # [win]
 {% set target_name = "x86_64-linux" %}  # [linux64]
 {% set target_name = "ppc64le-linux" %}  # [ppc64le]
-{% set target_name = "sbsa-linux" %}  # [aarch64]
+{% set target_name = "sbsa-linux" %}  # [aarch64 and arm_variant_type=="sbsa"]
+{% set target_name = "aarch64-linux" %}  # [aarch64 and arm_variant_type=="tegra"]
 {% set target_name = "x64" %}  # [win]
 {% set extension = "tar.xz" %}  # [not win]
 {% set extension = "zip" %}  # [win]
@@ -20,11 +22,12 @@ package:
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/{{ name }}/{{ platform }}/{{ name }}-{{ platform }}-{{ version }}-archive.{{ extension }}
   sha256: 392cac3144b52ba14900bc7259ea6405ae6da88a8c704eab9bbbcc9ba4824b07  # [linux64]
-  sha256: 9c9227c1e9122fd8448cafced3b32bc69f40d3c041d25034ea23611a1262852f  # [aarch64]
+  sha256: 9c9227c1e9122fd8448cafced3b32bc69f40d3c041d25034ea23611a1262852f  # [aarch64 and arm_variant_type=="sbsa"]
+  sha256: a24842165d98660d4ba9fd753395f7c9834445552110fabce4baa4c211fd2c52  # [aarch64 and arm_variant_type=="tegra"]
   sha256: ee7175da9628d47ccc92dce6d28d57ca77633e79079a2aee90e2a645edcd1384  # [win]
 
 build:
-  number: 1
+  number: 2
   binary_relocation: false
   skip: true  # [osx or ppc64le]
 
@@ -52,7 +55,6 @@ outputs:
         # we want to allow ex: libnvjitlink=12.6 installed in a cuda-version=12.3 environment,
         # both within the same CUDA major.
         - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x.x") }}
-      run_constrained:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
     test:
       requires:
@@ -102,8 +104,8 @@ outputs:
         # both within the same CUDA major.
         - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x.x") }}
         - {{ pin_subpackage("libnvjitlink", exact=True) }}
-      run_constrained:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
+      run_constrained:
         - libnvjitlink-static >={{ version }}
     test:
       commands:
@@ -140,7 +142,6 @@ outputs:
         # we want to allow ex: libnvjitlink=12.6 installed in a cuda-version=12.3 environment,
         # both within the same CUDA major.
         - {{ pin_compatible("cuda-version", min_pin="x", max_pin="x.x") }}
-      run_constrained:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
     test:
       commands:
