@@ -1,15 +1,17 @@
 {% set name = "libnvjitlink" %}
-{% set version = "13.3.33" %}
-{% set cuda_version = "13.3" %}
+{% set version = "13.4.52" %}
+{% set cuda_version = "13.4" %}
 {% set platform = "placeholder" %}  # [osx]
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-ppc64le" %}  # [ppc64le]
 {% set platform = "linux-sbsa" %}  # [aarch64]
-{% set platform = "windows-x86_64" %}  # [win]
+{% set platform = "windows-x86_64" %}  # [win64]
+{% set platform = "windows-arm64" %}  # [win and arm64]
 {% set target_name = "x86_64-linux" %}  # [linux64]
 {% set target_name = "ppc64le-linux" %}  # [ppc64le]
 {% set target_name = "sbsa-linux" %}  # [aarch64]
-{% set target_name = "x64" %}  # [win]
+{% set target_name = "x64" %}  # [win64]
+{% set target_name = "arm64" %}  # [win and arm64]
 {% set extension = "tar.xz" %}  # [not win]
 {% set extension = "zip" %}  # [win]
 
@@ -19,9 +21,10 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/{{ name }}/{{ platform }}/{{ name }}-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: f79e25bb1ef2f22f26c09897f6cb8719634f38e7330bd4700a1ea9ec9591eaff  # [linux64]
-  sha256: 6ed3a14646bd53e25ccf03a52586cdd12b07ad48cf81fe79deac49b5d64c2ce6  # [aarch64]
-  sha256: 43bc22509507c138c86885191bb2709b5d23506ea6abdc8bc64d9960e2b63363  # [win]
+  sha256: 564b6f0c17b119e3f37930aec8d30a2373f39cad3ac1d4c4cae57976734c8c25  # [linux64]
+  sha256: 7df6c86848d6c91e7dab374016d8060d18a6f1be65b11639c73eec3f030c82e2  # [aarch64]
+  sha256: 6888654b437de57775f23fc00fb51456399e22d3f795e30a9b6ce6f6ee787f8e  # [win64]
+  sha256: 459bc370a1a9ad836906a53e53b0f5e642feb8f533af904f3082a92805bd0e0e  # [win and arm64]
 
 build:
   number: 0
