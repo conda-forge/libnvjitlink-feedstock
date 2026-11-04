@@ -1,6 +1,6 @@
 {% set name = "libnvjitlink" %}
-{% set version = "13.4.92" %}
-{% set cuda_version = "13.4" %}
+{% set version = "13.5.37" %}
+{% set cuda_version = "13.5" %}
 {% set platform = "placeholder" %}  # [osx]
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-ppc64le" %}  # [ppc64le]
@@ -14,10 +14,10 @@
 {% set target_name = "arm64" %}  # [win and arm64]
 {% set extension = "tar.xz" %}  # [not win]
 {% set extension = "zip" %}  # [win]
-{% set sha256 = "e24557473e5e2e1dc591209558523deaca48b32123fe2b822f994b8e691c8ae3" %}  # [linux64]
-{% set sha256 = "e253a1f1a1582e2221737391cccf272bf722e44b05be1ed58ebfaefe6dd79315" %}  # [aarch64]
-{% set sha256 = "7cef0ee32d2221d07b122ba32e38898a9ecbdb256524f2c1f7b5c61a7f32b6ce" %}  # [win64]
-{% set sha256 = "73451f44a7afb46cfbdc8d2ef8b6b1d321ad03cdf38242d7099f53c488c3ec24" %}  # [win and arm64]
+{% set sha256 = "0b864b178368f295f01d80a4744013833fe0a6beeb67e5390dcda1070dd91cdf" %}  # [linux64]
+{% set sha256 = "059a68dec254768b223b1a0d834eac085109ef5e564fb221d2a01d83933947a8" %}  # [aarch64]
+{% set sha256 = "534b030b7a5bd095e9b2b53e86a0d5b33a9aa81f378c853d5db85696918a1a91" %}  # [win64]
+{% set sha256 = "2a025b50ddb9a83e5da6031bfa0755fababe6062af254df84c95b5cfdb9eff36" %}  # [win and arm64]
 
 package:
   name: {{ name|lower }}-split
@@ -28,7 +28,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   binary_relocation: false
   skip: true  # [osx or ppc64le]
 
